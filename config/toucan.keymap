@@ -35,7 +35,9 @@
 
         Enter {
             bindings = <&kp RET>;
-            key-positions = <19 20 21>;
+            key-positions = <21 22>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
 
         Escape {
@@ -49,22 +51,13 @@
         };
     };
 
-    behaviors {
-        td_sqt_ret: td_sqt_ret {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp SQT>, <&kp RET>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         base {
             display-name = "BASE";
             bindings = <
-&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  &mt LC(LS(LA(LGUI))) LA(BSPC)  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &td_sqt_ret  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LEFT_CONTROL  &kp LGUI  &lt 1 SPACE  &lt 1 SPACE  &kp LEFT_SHIFT  &mo 2  &kp RALT
+&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  &mt LC(LS(LA(LGUI))) LA(BSPC)  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LEFT_CONTROL  &kp LGUI  &lt 1 SPACE  &lt 1 SPACE  &kp LEFT_SHIFT  &mo 2  &kp RALT
             >;
         };
 
